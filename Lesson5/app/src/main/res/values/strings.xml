@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Lesson5</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="inputcups">Please input the number of cups:</string>
+    <string name="teaspoons">The number of teaspoons needed:</string>
+    <string name="tablespoons">The number of tablespoons needed:</string>
+
+</resources>
