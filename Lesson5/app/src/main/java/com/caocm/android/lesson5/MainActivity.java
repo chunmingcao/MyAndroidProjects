@@ -26,9 +26,9 @@ public class MainActivity extends Activity {
                 int cups = Integer.parseInt(cupsEdit.getText().toString());
 
                 TextView teaspoons = (TextView)findViewById(R.id.teaspoonsnumber);
-                teaspoons.setText(cups);
+                teaspoons.setText(Integer.toString(cups*48));
                 TextView tablespoons = (TextView)findViewById(R.id.tablespoonsnumber);
-                tablespoons.setText(cups/3);
+                tablespoons.setText(Integer.toString(cups*48/3));
             }
         });
     }
