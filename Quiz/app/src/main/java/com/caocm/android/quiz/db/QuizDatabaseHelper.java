@@ -17,7 +17,11 @@ public class QuizDatabaseHelper extends SQLiteOpenHelper{
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        db.execSQL("CREATE TABLE QUESTIONS (" +
+                "_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "QUSTIONBODY TEXT," +
+                "ANSWER INTEGER" +
+                ");");
     }
 
     @Override
