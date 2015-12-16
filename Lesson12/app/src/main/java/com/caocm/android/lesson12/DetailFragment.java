@@ -60,7 +60,6 @@ public class DetailFragment extends Fragment {
             mContent = getArguments().getString("KEY");
             Log.i("Key", mContent);
         }
-        Log.i("Key", mContent);
     }
 
     @Override
@@ -70,7 +69,7 @@ public class DetailFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_detail, container, false);
         //((TextView)(view.findViewById(R.id.content))).setText(ListData.dic.get(mContent));
-        Log.i("onCreateView", ListData.dic.get(mContent));
+        //Log.i("onCreateView", ListData.dic.get(mContent));
         return view;
     }
 
@@ -87,6 +86,11 @@ public class DetailFragment extends Fragment {
         mListener = null;
     }
 
+    public void updateContent(String key){
+        Log.i("updateContent", key);
+        TextView content = (TextView)getActivity().findViewById(R.id.content);
+        content.setText(ListData.dic.get(key));
+    }
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated

@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -16,18 +17,29 @@ public class DetailActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        //String key = getIntent().getExtras().getString("KEY");
+        String key = getIntent().getExtras().getString("KEY");
 
-        DetailFragment details = new DetailFragment();
-        details.setArguments(getIntent().getExtras());
-
+        /*DetailFragment details = new DetailFragment();
+        details.setArguments(getIntent().getExtras());*/
+        Log.i("DetailActicity", "start");
+        TextView content = (TextView)findViewById(R.id.content);
+        content.setText(ListData.dic.get(key));
+/*
         FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        DetailFragment detailFragment = (DetailFragment)fragmentManager.findFragmentById(R.id.details);
+        detailFragment.updateContent(key);*/
+        /*FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.details2, details);
-        fragmentTransaction.commit();
+        fragmentTransaction.commit();*/
 
-    }
-
+    }/*
+    @Override
+    public void onResume(){
+        super.onResume();
+        Log.i("DetailActicity", "onResume");
+        TextView content = (TextView)findViewById(R.id.content);
+        content.setText("XXXXXXXXXXXXX");
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
