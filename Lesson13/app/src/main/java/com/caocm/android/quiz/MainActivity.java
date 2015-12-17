@@ -33,13 +33,13 @@ public class MainActivity extends FragmentActivity implements FeedbackDialogFrag
         float currentVersion = 1.0f;
         SharedPreferences preferences = getPreferences(MODE_PRIVATE);
         float dbversion = preferences.getFloat("DBVERSION", 0);
-        if(dbversion < currentVersion) {
-            DBUpdateIntentService.startActionDBUpdate(this, null, null);
-        }else{
+        //if(dbversion < currentVersion) {
+            DBUpdateIntentService.startActionDBUpdate(this);
+        /*}else{
             SharedPreferences.Editor editor = preferences.edit();
             editor.putFloat("DBVERSION", currentVersion);
             editor.commit();
-        }
+        }*/
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
